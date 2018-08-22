@@ -1,0 +1,4 @@
+var storage = {};
+export {
+    storage
+}

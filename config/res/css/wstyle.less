@@ -1,0 +1,304 @@
+@import './base.less';
+@import './gxfResetElement.less';
+@import './resetUI.less';
+// @import '../fonts/iconfont.css';
+body {
+    font-size: 16px;
+    color: #48576a;
+}
+@mainTheme: #151f3b;
+@mainTheme-light: #1c294e;
+@mainTheme-color: #2EA4FD;
+@mainTheme-blueDark: #151f3b;
+@mainTheme-dark: #ccc;
+@fontColor-gray: #888c97;
+@fontColor-blueLight: #d1d8e6;
+@fontColor-blue: #359aff;
+.header{
+    right: 0;
+    width: 100%;
+    height: 50px;
+    // background-color: #2dc3e8;
+    position: fixed;
+    z-index:10;
+    top:0;
+}
+.header .logo{
+    float:left;
+    margin-top:20px;
+    margin-left:20px;
+    width:40px;
+    height:40px;
+}
+.header h3{
+    float: left;
+    line-height: 80px; 
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-left:10px;
+    font-weight: 100;
+}
+.header .el-menu {
+    background: transparent;
+}
+.header .el-submenu__title {
+    font-size: 16px;
+    color: #fff;
+}
+.header .el-menu--horizontal > .el-submenu:hover .el-submenu__title {
+    border-bottom: none;
+    background-color: transparent;
+    color: #fff;
+}
+.header .el-menu--horizontal .el-submenu__title:hover {
+    background-color: transparent;
+}
+.el-menu--horizontal>.el-menu-item.is-active,.el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
+    border-bottom: 2px solid transparent !important;
+    color: #909399 !important;
+}
+.header .rightBox{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.header .rightBox .right:nth-last-of-type(1){
+    border: none;
+}
+.header h3{ width: 20%;}
+.rightBox{ width: 80%;}
+.header .rightBox img{
+     //overflow: hidden;
+}
+.rightBox li{ 
+    width: 32%;
+    float: right;
+    height: 50px;
+    text-align: right;
+    line-height: 54px;
+ }
+.header .rightBox li span{
+    margin-right: 20px;
+    padding-right: 25px;
+    color: #fff;
+}
+.shuxian{ border-right: 1px solid #fff; font-size: 14px;}
+.shuxian img{ margin-top: 15px; margin-left: -29px; position: absolute;}
+.header .rightBox li span.col1{
+    background-color: #489de6;
+    cursor:pointer;
+}
+.header .rightBox li span.col2{
+    background-color: red;
+    cursor:pointer;
+}
+.header .searchBox img{
+     height:25px;
+     width:25px;
+}
+.header .searchBox span{
+    float:right;
+    line-height: 26px;
+    font-size: 16px;
+    color:#fff;
+    margin-left:5px;
+}
+
+.header .newsBox img{
+     height:25px;
+     width:24px;
+}
+.header .newsBox span{
+    float:right;
+    background: #FFC400;
+    border-radius: 2px;
+    width:22px;
+    height:24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 14px;
+    color:#fff;
+    margin-left:8px;
+}
+
+.header .usersBox span:nth-of-type(1){
+    line-height: 24px;
+}
+.header .usersBox span:nth-of-type(2){
+    
+}
+
+
+//全局  中间样式
+.contentBody{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.mainContent{
+    position: absolute;
+    top:0px;
+    left:230px;
+    right:0;
+    bottom: 0;
+    background: #eee;
+    overflow: auto;
+    padding-top:88px;
+}
+.Collapse1{
+    position: absolute;
+    top:0px;
+    left:64px;
+    right:0;
+    bottom: 0;
+    background: #eff8ff;
+    overflow: auto;
+}
+.mainContent .tapBox{
+    height:40px;
+    background:#f2f2f2;
+}
+.mainContent .tapBox ul li{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    line-height: 40px;
+    min-width: 65px;
+    padding: 0 15px;
+    text-align: center;
+    cursor: pointer;
+}
+.mainContent .tapBox ul li.liActive{
+    background-color: #fff;
+}
+.mainContent .tapBox ul li.liActive i{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 20px;
+    margin-left: 8px;
+    top: 1px;
+    text-align: center;
+    font-size: 14px;
+    color: #c2c2c2;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+}
+.mainContent .breadcrumb{
+    height: 30px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    top:50px;
+    z-index: 10;
+    background: #fff;
+    width:100%;
+}
+.breadcrumb{
+    margin-left: -5px;
+    text-indent: 1em;
+    background: #f3f3f3!important;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+}
+
+.mainContent .breadcrumb>span{
+    font-size: 14px;
+    line-height: 40px;
+    padding: 0 8px 0 0;
+    text-align: center;
+}
+
+.mainContent .w-main{
+    position: relative;
+    background: #fff;
+    padding: 5px;
+    margin: 15px 8px 0 15px;
+    box-shadow: 1px 0 10px 1px rgba(0,0,0,.3);
+}
+
+.www-hidden{
+    display: none !important;
+}
+.el-table__empty-block{
+    height: auto !important;
+}
+.audit-dialog {
+    width: 500px!important;
+}
+.message-dialog {
+    width: 420px!important;
+}
+.page-container {
+	min-width: 520px;
+	font-size:14px;
+	padding: 12px;
+    padding-bottom:0;
+	width: 100%;
+	position: relative;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	.query-item {
+		display: inline-block;
+		margin-bottom: 25px;
+		.el-button {
+			margin-left: 12px;
+        }
+        & > .el-input {
+            width: 195px;
+            margin-right: 5px;
+        }
+	}
+	.contract-item{
+		width: 100%;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+	}
+}
+.pagination-container {
+    margin-top: 15px;
+}
+.el-table .ellipsis-text .cell {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+}
+.assetsHistoryContaner {
+    .histroy-row,
+    .el-table--enable-row-hover .el-table__body tr:hover>td {
+        background-color: white !important;
+    }
+}
+.login-input .el-input__inner {
+    background-color: #edeef6 !important;
+    border: 1px solid #edeef6 !important;
+    transition: none !important;
+    height: 36px !important;
+    box-sizing: border-box !important;
+    border-radius: 0 !important;
+}
+.noneRequired.el-form-item.is-required .el-form-item__label:before {
+    content: '' !important;
+}
+.log{ width: 466px; min-height: 76%; position: absolute; background: #fff; left: 62%; top: 70px;}
+
+.filter-container span{ padding-right: 5px;}
+
+
+
+.tablelayer{
+    padding: 0px!important;
+}
+
+.app-container .filter-container .tableheader{
+    background-color: #a0d468!important;
+}
+
+
+
