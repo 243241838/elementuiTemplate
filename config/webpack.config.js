@@ -53,25 +53,29 @@ module.exports = {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
       },
-      {
-        test: /\.attached\.less$/,
-        use: [
-          { loader: 'style-loader/useable' },
-          { loader: 'css-loader' },
-          { loader: 'less-loader' }
-        ]
-      },
+      // {
+      //   test: /\.attached\.less$/,
+      //   use: [
+      //     { loader: 'style-loader/useable' },
+      //     { loader: 'css-loader' },
+      //     { loader: 'less-loader' }
+      //   ]
+      // },
+      // {
+      //   test: /\.less$/,
+      //   exclude: /\.attached\.less$/,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'style-loader',
+      //     use: [
+      //       { loader: 'css-loader' },
+      //       { loader: 'less-loader' }
+      //     ],
+      //     publicPath: ''
+      //   })
+      // },
       {
         test: /\.less$/,
-        exclude: /\.attached\.less$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader' },
-            { loader: 'less-loader' }
-          ],
-          publicPath: ''
-        })
+        use: ['style-loader', 'css-loader', 'less-loader']
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
