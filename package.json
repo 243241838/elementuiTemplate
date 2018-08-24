@@ -49,13 +49,13 @@
     "webpack-merge": "4.1.0"
   },
   "scripts": {
-    "start": "webpack -p --config ./config/webpack.config.js",
-    "dev": "webpack-dev-server --config ./config/webpack.config.js --open",
+    "build": "webpack -p --config ./config/webpack.prod.config",
+    "dev": "webpack-dev-server --config ./config/webpack.dev.config --open",
     "devServer": "node ./config/build/changeServer.js devServer && npm run dev",
     "agency": "node ./config/build/changeServer.js agency && npm run dev",
-    "testServer": "node ./config/build/changeServer.js testServer && npm run start",
-    "chengmei": "node ./config/build/changeServer.js chengmei && npm run start",
-    "production": "node ./config/build/changeServer.js production && npm run start"
+    "testServer": "node ./config/build/changeServer.js testServer && npm run build",
+    "chengmei": "node ./config/build/changeServer.js chengmei && npm run build",
+    "production": "node ./config/build/changeServer.js production && npm run build"
   },
   "repository": {
     "type": "git",

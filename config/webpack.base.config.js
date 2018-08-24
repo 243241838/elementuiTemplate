@@ -1,7 +1,8 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin"); // css分离
 const cleanWepackPlugin = require('clean-webpack-plugin');
+
 var webpack = require('webpack')
 
 var config = require('./config');
@@ -33,72 +34,6 @@ module.exports = {
       '@common': path.resolve(__dirname, '../src/common'),
     }
   },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.vue$/,
-        exclude: /node_modules/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      },
-      {
-        test: /\.attached\.less$/,
-        use: [
-          { loader: 'style-loader/useable' },
-          { loader: 'css-loader' },
-          { loader: 'less-loader' }
-        ]
-      },
-      {
-        test: /\.less$/,
-        exclude: /\.attached\.less$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader' },
-            { loader: 'less-loader' }
-          ],
-          publicPath: ''
-        })
-      },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-        loader: 'file-loader',
-        options: {
-          name: 'crm/static/fonts/[name].[hash:8].[ext]'
-        }
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'url-loader',
-
-        options: {
-          limit: 1000,
-          name: path.posix.join('crm', 'static/images/[name].[hash:7].[ext]')
-        }
-      },
-      {
-        test: /.(mp3)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: path.posix.join('crm', 'static/music/[name].[hash:7].[ext]')
-        }
-      }
-    ]
-  },
   plugins: [
     // 这里是之前配置的其它各种插件
     new cleanWepackPlugin(//先清空dist
@@ -109,7 +44,7 @@ module.exports = {
         dry: false //启用删除文件
       }
     ),
-    new webpack.DefinePlugin({
+    new webpack.DefinePlugin({ //发布全局便量
       'process.env': config.dev.env
     }),
     //引入jquery(内置模块)
@@ -118,7 +53,8 @@ module.exports = {
     //   $: "jquery"
     // }),
     //css分离
-    new ExtractTextPlugin(path.posix.join('crm', 'static/css/[name].[contenthash].css')),
+    // new ExtractTextPlugin(path.posix.join('crm', 'static/css/[name].[contenthash].css')),
+    new ExtractTextPlugin('crm/static/css/[name].[contenthash].css'),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './index.html'),
       favicon: path.resolve('favicon.ico')
@@ -140,5 +76,3 @@ module.exports = {
     }
   }
 }
-
-// http://192.168.0.13

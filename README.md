@@ -1,4 +1,6 @@
 # ��Ŀ����ģ�壬����vue����Ŀ����ʹ�ÿ���.
+#extract-text-webpack-plugin
+# 不支持dev环境， 现分离开发和生产环境
 # package.json 某些字段
 # dependencies 可选字段，指示当前包所依赖的其他包。  生产时的要用的包 -save
 # main 可选字段。这个字段的值是你程序主入口模块的ID。如果其他用户需要你的包，当用户调用require()方法时，返回的就是这个模块的导出（exports）。    开发是要用的包 --save-dev
