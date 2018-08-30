@@ -64,7 +64,7 @@ module.exports = {
     host: '192.168.1.155',
     //  host: '192.168.1.36',
     // host: 'localhost',
-    port: 8086,
+    port: 8087,
     disableHostCheck: true,
     proxy: { //代理
       '/kxd-admin': {
