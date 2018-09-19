@@ -1,7 +1,6 @@
 <template>
     <div class="app-container calendar-list-container ggg_user">
-        <img  :src="img">
-        <img class="img1a"  :src="img1">
+        <img src="~@res/img/greetPage.png">
     </div>
         
 </template>
@@ -9,8 +8,7 @@
 export default {
     data() {
         return {
-            img: require('@res/img/huanying.png'),
-             img1: require('@res/img/huanybeij.png'),
+             img: require('@res/img/greetPage.png'),
         }
     },
     computed: {
@@ -35,13 +33,9 @@ export default {
         position: absolute;
         left:0;
         right:0;
-        top:-50%;
+        top:0%;
         bottom:0;
-        width:100%;
-    }
-    .img1a{
-        width: 40%;
-        top:30%; 
+        
     }
 }
 </style>
