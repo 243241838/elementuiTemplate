@@ -3,7 +3,7 @@
         <el-button type="primary" @click="isShowAlert('alertFrom')">新增</el-button>
         <div class="filter-container">
             <!--<div class="tableheader">用户</div>-->
-            <el-table :data="TableList" v-loading="listLoading" border fit highlight-current-row style="width: 100%" stripe>
+            <el-table :data="TableList" v-loading="listLoading" border fit highlight-current-row style="width: 100%">
                 <el-table-column align="center" label="用户组名称">
                     <template slot-scope="scope">
                         {{scope.row.roleName}}
@@ -36,7 +36,7 @@
         </div>
         <!-- 分页 -->
         <div v-if="total" class="pagination-container">
-            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentPageChange" :current-page.sync="params.page" :page-sizes="[10,20,30, 50]" :page-size="params.limit" layout="total, sizes, prev, pager, next, jumper" :total="total">
+            <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentPageChange" :current-page.sync="params.page" :page-sizes="[10,20,30, 50]" :page-size="params.limit" layout="total, sizes, prev, pager, next, jumper" :total="total">
             </el-pagination>
         </div>
         <!--弹框-->
