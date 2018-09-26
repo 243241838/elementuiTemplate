@@ -1,0 +1,8 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    "files.associations": {
+        "*.vue": "vue"
+    },
+    "vsicons.presets.hideFolders": true,
+    "vetur.validation.template": false //对v-fro不加加key的报错
+}
