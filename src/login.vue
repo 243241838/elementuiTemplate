@@ -31,7 +31,7 @@
           <el-input v-model="alertForm.phone" placeholder="请输入"></el-input>
         </el-form-item>
         <el-form-item label="账户" prop="username" v-show="false">
-          <el-input  v-model="loginForm.username"  placeholder="请输入"></el-input>
+          <el-input v-model="loginForm.username" placeholder="请输入"></el-input>
         </el-form-item>
         <el-form-item prop="password" label="新密码">
           <el-input type="" v-model="alertForm.password" placeholder="请输入" @keyup.native="InputFocus($event)"></el-input>
@@ -103,7 +103,7 @@ export default {
         ],
         password: [
           // { required: true, trigger: 'blur', validator: validatePass }
-           { required: true, message: '请输入', trigger: 'blur' },
+          { required: true, message: '请输入', trigger: 'blur' },
         ]
       },
       loading: false,
@@ -151,6 +151,9 @@ export default {
     },
     // 登录
     login() {
+      this.$store.dispatch('SETUSER', { user: '11' });
+      Cookies.set('user', '11')
+      this.$router.push({ path: 'jurisdiction/greetPage' });
       ajax({
         url: 'auth/login',
         optionParams: {

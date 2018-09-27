@@ -15,11 +15,11 @@
                 <el-input v-model="params.phone" placeholder="请输入"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" icon="search" @click="getTable('isseach')">查询</el-button>
-                <el-button icon="setting" @click="reset('params')">重置</el-button>
+                <el-button type="primary" size="medium" icon="el-icon-search" @click="getTable('isseach')">查询</el-button>
+                <el-button icon="el-icon-setting" size="medium" @click="reset('params')">重置</el-button>
             </el-form-item>
         </el-form>
-        <el-button type="primary" @click="isShowAlert">新增</el-button>
+        <el-button type="primary"  size="medium"  @click="isShowAlert">新增</el-button>
         <div class="filter-container">
             <el-table :data="dataList" v-loading="listLoading" border fit highlight-current-row style="width: 100%">
                 <el-table-column align="center" label="用户">
@@ -51,13 +51,13 @@
                 </el-table-column>
                 <el-table-column align="center" label="操作">
                     <template slot-scope="scope">
-                        <el-button type="text" size="small" @click="isShowAlert(scope.row, 2)">
+                        <el-button type="button" size="mini" @click="isShowAlert(scope.row, 2)">
                             修改
                         </el-button>
-                        <el-button type="text" size="small" @click="deleteData(scope.row)">
+                        <el-button type="button" size="mini" @click="deleteData(scope.row)">
                             删除
                         </el-button>
-                        <el-button type="text" size="small" @click="isShowAlert(scope.row, 3)">
+                        <el-button type="button" size="mini" @click="isShowAlert(scope.row, 3)">
                             查看
                         </el-button>
                     </template>
@@ -136,7 +136,7 @@ export default {
         };
         return {
             value1: '',
-            listLoading: true, //列表加载状态
+            listLoading: false, //列表加载状态
             loading: false, //二次点击
             params: { //搜索条件
                 limit: 10, //pageSize
@@ -144,8 +144,8 @@ export default {
                 username: '', //用户名字
                 phone: ''
             },
-            total: 0, //总页数
-            dataList: [],
+            total: 100, //总页数
+            dataList: [{name: 'a'}],
             title: '',
             dialogVisible: false, //修改弹窗出现
             disabled: false, //是否编辑
@@ -174,8 +174,8 @@ export default {
     computed: {
     },
     created() {
-        this.getTable();
-        this.getUser(); //用户组
+        // this.getTable();
+        // this.getUser(); //用户组
     },
     mounted() {
     },
