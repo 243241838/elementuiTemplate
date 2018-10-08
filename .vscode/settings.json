@@ -4,5 +4,7 @@
         "*.vue": "vue"
     },
     "vsicons.presets.hideFolders": true,
-    "vetur.validation.template": false //对v-fro不加加key的报错
+    "vetur.validation.template": false, //对v-fro不加加key的报错
+    "editor.detectIndentation": false,
+    "editor.tabSize": 5
 }
