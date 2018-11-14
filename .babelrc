@@ -1,5 +1,5 @@
 {
-  "presets": ["es2015", "stage-0"]
+  "presets": ["es2015", "stage-0"]  //elementui文档moudle：false  viex ...mapGetters编译不成功
   ,"plugins": [["component", [
     {
       "libraryName": "element-ui",

@@ -4,9 +4,10 @@ import VueRouter from 'vue-router';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import * as filters from './filters/index.js'
+// import echarts from 'echarts';
 import echarts from 'echarts';
 // 赋值到Vue的原型上面，在页面就可以使用this.$echarts获取到了
-Vue.prototype.$echarts = echarts;
+// Vue.prototype.$echarts = echarts;
 //全局过滤器
 Object.keys(filters).forEach(key => {
     Vue.filter(key, filters[key])
@@ -19,6 +20,7 @@ import NProgress from 'nprogress'; // Progress 进度条
 import 'nprogress/nprogress.css'; // Progress 进度条 样式
 import Cookies from 'js-cookie';
 import ajax from '@utils/config';
+Vue.use(VCharts)
 Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(ElementUI);
