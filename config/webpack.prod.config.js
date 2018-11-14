@@ -41,11 +41,6 @@ module.exports = merge(base, {
         new webpack.DefinePlugin({ //发布全局便量
             'process.env': config.dev.env
         }),
-        //引入jquery(内置模块)
-        // new webpack.ProvidePlugin({
-        //   jQuery: "jquery",
-        //   $: "jquery"
-        // }),
         //css分离
         // new ExtractTextPlugin(path.posix.join('crm', 'static/css/[name].[contenthash].css')),
         new ExtractTextPlugin({

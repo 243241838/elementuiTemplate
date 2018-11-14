@@ -18,11 +18,6 @@ module.exports = merge(base, {
         new webpack.DefinePlugin({ //发布全局便量
             'process.env': config.dev.env
         }),
-        //引入jquery(内置模块)
-        // new webpack.ProvidePlugin({
-        //   jQuery: "jquery",
-        //   $: "jquery"
-        // }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './index.html'),
             favicon: path.resolve('favicon.ico'),
